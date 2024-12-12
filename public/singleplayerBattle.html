@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 
+      This is an HTML comment
+      You can write text in a comment and the content won't be visible in the page
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <!--
+      This is the page head - it contains info the browser uses
+      Like the title, which appears on the browser tab but not inside the page
+      Further down you'll see the content that displays in the page
+    -->
+    <title>Hello World!</title>
+    
+
+    <!-- The website stylesheet -->
+    <!--link rel="stylesheet" href="/style.css" /-->
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- The website JavaScript file -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+     
+
+    <script src="/singleplayerMode.js" defer></script>
+  </head>
+  <body>
+    
+    <img id="announcerText" src="" style="height:100%; position:absolute; z-index:999">
+    <div id="title" style="position:absolute; width:100%; height:100%; background-color:white; z-index:1000;">
+      <!--<img src="https://cdn.glitch.global/5dc85c69-4523-4b77-a54c-c3bf09afefaf/PressPlay.png?v=1731981152472" style="height:100%; position:absolute; z-index:999999999999999999; left:50%; transform:translateX(-50%)">-->
+      <div style="width:100%; height:200px; position:absolute; background:black;z-index:5;">
+      <img class="centerAlign" style="position:absolute; z-index:2000;" src="https://cdn.glitch.global/8682bce0-587a-4e77-b4f1-d6bfb8e7389c/CartoonClashLogo.png?v=1733533138123">
+      </div>
+      <img class="centerAlign" style="width:calc(100% + 20px); height:calc(100% - 380px);z-index:1;" src="https://cdn.glitch.global/8682bce0-587a-4e77-b4f1-d6bfb8e7389c/fireBG.gif?v=1733783330876gif">
+      <img class="centerAlign" src="https://cdn.glitch.global/8682bce0-587a-4e77-b4f1-d6bfb8e7389c/VsTextBig.png?v=1733543181066" style="height:300px; position:absolute; z-index:7;">
+      <img id="player1VSIMG" class="verticalCenter" src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/1200px-SpongeBob_SquarePants_character.svg.png" style="position:absolute; height:calc(100% - 380px); left:-calc(100% - 899878px); z-index:4;" >      
+      <img id="player2VSIMG" class="verticalCenter" src="https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Patrick_Star.svg/1200px-Patrick_Star.svg.png" style="position:absolute; height:calc(100% - 380px); right:897997798; z-index:4;">
+      <script>
+      let currentTime = 0;
+        new Audio("https://cdn.glitch.global/8682bce0-587a-4e77-b4f1-d6bfb8e7389c/InitBattle.mp3?v=1733545530523").play();
+      setInterval(function(){
+        currentTime += 1/60;
+        document.querySelector("#player1VSIMG").style.left = `${lerp(-document.querySelector("#player1VSIMG").width, 0, Math.min(currentTime, 1))}px`
+
+        document.querySelector("#player2VSIMG").style.right = `${lerp(-document.querySelector("#player2VSIMG").width, 0, Math.min(currentTime-1.75, 1))}px`
+      }, 0)
+      setTimeout(function(){
+        startedCountdown = true;
+    let ready = new Audio("https://cdn.glitch.global/5dc85c69-4523-4b77-a54c-c3bf09afefaf/Ready.wav?v=1731982303112");
+    let go = new Audio("https://cdn.glitch.global/5dc85c69-4523-4b77-a54c-c3bf09afefaf/Go.wav?v=1731982302914");
+    let announcerUI = document.querySelector("#announcerText");
+    //backgroundMusic.play();
+    document.querySelector("#title").style.display = "none";
+    document.querySelector("#songCredits").style.animation = "songLabel 5s forwards ease";
+    unPause = true;
+    setTimeout(function (){announcerUI.setAttribute("src", "https://cdn.glitch.global/5dc85c69-4523-4b77-a54c-c3bf09afefaf/Ready.png?v=1731982302677"); ready.play()}, 500);
+    setTimeout(function (){announcerUI.setAttribute("src", "https://cdn.glitch.global/5dc85c69-4523-4b77-a54c-c3bf09afefaf/Go.png?v=1731982303077"); go.play()}, 2500);
+    setTimeout(function (){beginGame = true; announcerUI.setAttribute("src", "")}, 3000);
+      }, 5000)
+      </script>
+      <div style="width:100%; height:200px; position:absolute; bottom:0; background:black; z-index:5;">
+        <div id="vs" class="centerAlign" style="display:block; width:100px; height:100px;">
+          <p id="player1VSText" style="color:white; font-size:30px; position:absolute; right:100%; display:inline-block; text-align:end; white-space: nowrap; ">
+            PLAYER 13425426346346
+          </p>
+          <img src="https://cdn.glitch.global/8682bce0-587a-4e77-b4f1-d6bfb8e7389c/CartoonClashVSText.png?v=1733533277195" style="height:100px; position:absolute;">
+           <p id="player2VSText" style=" color:white; font-size:30px;  left:100%; position:absolute; white-space: nowrap;">
+            PLAYER 22346634346
+          </p>
+        </div>
+        
+      </div>
+    </div>
+    <div id="resultsScreen" style="display:none">
+      
+    
+    <div style="width:100%; height:100%; position:absolute; background:black; opacity:25%; z-index:91920412980;"></div>
+    <h1 id="victoryText" style="position:absolute; color:white; left:50%; top: 50%; margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateX(-50%) translateY(-50%); font-size:150px; z-index:91920412981; opacity:200%;">
+        WOW! YOUR GAME IS BROKEN
+      </h1>
+      </div>
+    <div id="fadeToBlack" style="position:absolute; top:0; left:0; width:100%; height:100%; background-color:black; z-index:9192041298100; display:none; opacity:0;"></div>
+    <img id="loadingScreen" src="https://cdn.glitch.global/8682bce0-587a-4e77-b4f1-d6bfb8e7389c/LoadScreen.gif?v=1733783093996" style="position:absolute; width:100%; height:100%; top:0; left:0; display:none; z-index:9192041298105">
+    
+    <div id="debugOrigin" style="width:25px; height:25px; background-color:clear; position:absolute; top:50%; left:50%; z-index:105;"></div>
+    <img id="songCredits" src="https://cdn.glitch.global/5dc85c69-4523-4b77-a54c-c3bf09afefaf/StadiumRaveMortalKombat.png?v=1731972949601" style="position:absolute; top:0; left:calc(100% - 0px); z-index: 9999">
+    <div class="ui" id="player1UI" style="outline:solid thick white; width:100px; height:125px; background-color:white; position:absolute; top:50px; left:0; z-index:5;">
+        <div class="ui" id="player1Img" style="width:100px; height:125px; position:absolute; top:0px; left:0; z-index:6; background-size: 250px; background:url('https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/1200px-SpongeBob_SquarePants_character.svg.png') no-repeat center; background-position:top; background-size:auto 250px;"></div>
+
+    </div>
+     <div class="ui" id="player1HealthBarBG" style="width:calc(50% - 170px); height:25px; background-color:white; position:absolute; top:85px; left:90px; z-index:4; outline:solid thick white; transform:skew(-45deg)">
+    <div class="ui healthbar" id="player1HealthBar" style="width:100%; height:25px; background-color:green; position:absolute; z-index:5; outline:solid thick white;"></div>
+    <div class="ui healthbar" id="player1HealthBarTrail" style="width:100%; height:25px; background-color:red; position:absolute; z-index:4; outline:solid thick white;"></div></div>
+    <p class="ui" id="player1Text" style="position:absolute; left:110px; top:100px; z-index:10; -webkit-text-stroke:1px black; color:white; font-size:30px; font-weight:bold;">
+      SpongeBob SquarePants
+    </p>
+    <div class="ui" id="player2UI" style="width:100px; height:125px; background-color:white; position:absolute; top:50px; right:0; z-index:5; outline:solid thick white;">
+    <div class="ui" id="player2Img" style="width:100px; height:125px; background-color:white; position:absolute; top:0px; right:0; z-index:6; background:url('https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Patrick_Star.svg/1200px-Patrick_Star.svg.png') no-repeat center; background-position:top; background-size:auto 250px;"></div>
+     
+    </div>
+     <div class="ui" id="player2HealthBarBG" style="width:calc(50% - 170px); height:25px; background-color:white; position:absolute; top:85px; right:90px; z-index:3; outline:solid thick white; transform:skew(-45deg)">
+    <div class="ui healthbar" id="player2HealthBar" style="width:100%; height:25px; background-color:green; position:absolute; z-index:5; outline:solid thick white; right:0;"></div>
+    <div class="ui healthbar" id="player2HealthBarTrail" style="width:100%; height:25px; background-color:red; position:absolute; z-index:4; outline:solid thick white; right:0;"></div></div>
+    <p class="ui" id="player2Text"  style="position:absolute; right:110px; top:100px; z-index:10; -webkit-text-stroke:1px black; color:white; font-size:30px; font-weight:bold;">
+      Patrick Star
+    </p>
+    <div style="display:flex;position:absolute;left:0;bottom:0;flex-wrap: nowrap;align-content: center;justify-content: center;flex-direction: column;">
+<p class="ui" id="pressA" style="z-index:10; -webkit-text-stroke:1px black; color:white; font-size:30px; font-weight:bold;">Press A to use your shield</p>
+    <p class="ui" id="pressS" style="z-index:10; -webkit-text-stroke:1px black; color:white; font-size:30px; font-weight:bold;">Press S to use your ice breath</p>
+      <p class="ui" id="pressX" style="z-index:10; -webkit-text-stroke:1px black; color:white; font-size:30px; font-weight:bold;">
+      Press X to shoot lasers
+    </p>
+      <p class="ui" id="holdSpace" style="z-index:10; -webkit-text-stroke:1px black; color:white; font-size:30px; font-weight:bold;">
+      Hold the space button and use arrow keys to fly
+    </p>
+</div>
+        <div style="display:flex;position:absolute;right:0;bottom:0;flex-wrap: nowrap;align-content: center;justify-content: center;flex-direction: column;">
+<p class="ui" id="rechargingIceBreath" style="z-index:10; -webkit-text-stroke:1px black; color:white; font-size:30px; font-weight:bold;">Recharging ice breath in YOUR GAME IS BROKEN seconds</p>
+    <p class="ui" id="rechargingShield" style="z-index:10; -webkit-text-stroke:1px black; color:white; font-size:30px; font-weight:bold;">Regenerating shield in YOUR GAME IS ALSO BROKEN seconds</p>
+
+</div>
+    <div class="frame" style="position:absolute; background-image:url('https://cdn.glitch.global/5dc85c69-4523-4b77-a54c-c3bf09afefaf/Man_Ray_Returns_001.webp?v=1731514611391');">
+      
+    
+    <div id="stageContainer">
+      
+    
+    <!--<img id="daPlayer1" src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/1200px-SpongeBob_SquarePants_character.svg.png" style="position:absolute; height:150px; bottom:0px; left:738px; transform: scale(-1, 1);">-->
+      <!--<img id="p1Fist" src="https://cdn.glitch.global/5dc85c69-4523-4b77-a54c-c3bf09afefaf/clenched-fist-vector-publicdomain.png?v=1731689757145"  style="position:absolute; height:30px; bottom:75px; left:738px; transform: scale(-1, 1) rotate(90deg);">-->
+      
+      <!--<div id="p1Hitbox" style="background-color:pink; position:absolute; height:150px; width:150px; bottom:0px; left:0px;">
+        
+      </div>-->
+      
+      </div>
+      </div>
+    <div class="frame2" style="position:absolute;">
+      
+    
+    <div id="stageContainer">
+      
+  <div id="p1Guide" style="width:25px; height:25px; background-color:clear; position:absolute; bottom:0px; left:50px; z-index:105;"></div>   
+  <div id="p2Guide" style="width:25px; height:25px; background-color:clear; position:absolute; bottom:0px; left:249px; z-index:105;"></div>
+    <!--<img id="player1" src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/1200px-SpongeBob_SquarePants_character.svg.png" style="position:absolute; height:150px; bottom:0px; left:738px; transform: scale(-1, 1);"/>-->
+      </div>
+      </div>
+  </body>
+</html>

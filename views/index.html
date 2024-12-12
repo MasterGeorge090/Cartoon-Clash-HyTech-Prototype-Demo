@@ -1,0 +1,60 @@
+<!--<img style="position:absolute; left:0; top:0; width:100%; height:100%;" src="https://cdn.glitch.global/5dc85c69-4523-4b77-a54c-c3bf09afefaf/PressPlay.png?v=1731981152472">-->
+<img id="loadingScreen" src="https://cdn.glitch.global/8682bce0-587a-4e77-b4f1-d6bfb8e7389c/LoadScreen.gif?v=1733783093996" style="position:absolute; width:100%; height:100%; top:0; left:0; display:none; z-index:1000000000">
+<p id="topText" style="color:white; position:absolute; top:0%; left:50%; transform:translateX(-50%); text-wrap: nowrap;">
+  READ THIS BEFORE PLAYING PLEASE!
+</p>
+<p id="disclaimer" style="color:white; position:absolute; top:50px; /*left:50%; width:100%;  transform:translateX(-50%); */text-align:center;">
+  This game is a personal project of mine and doesn't profit off any creators. I am not intending to commit copyright infringement. All cartoon characters belong to their rightful owners. This game uses Wikipedia's api to select characters and estimate their stats, and the game scrapes images from Bing to get the character's image and background, meaning this game is likely to be inaccurate and make mistakes, especially when it comes to choosing a background. Those mistakes include but are not limited to: choosing the wrong image for a character, giving the character abilities it shouldn't have and vice versa, or giving both characters the same image. Mistakes like these are out of my control, so only report bugs involving the game itself, not the api. I recommend you play the game in fullscreen (F11 in Windows, Command + Control + F or Fn + F on Mac) since the game runs on html, not a canvas. Press enter to begin playing. 
+</p>
+<p id="thankYou" style="display:none;color:white; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); text-wrap: nowrap;">
+  Thanks for playing my game
+</p>
+<script>
+  let isLoading = false;
+  addEventListener("keydown", function(event){
+
+  if (event.keyCode === 13)
+  {
+    if (!isLoading)
+    {
+      isLoading = true;
+    document.querySelector("#topText").style.display = "none";
+    document.querySelector("#disclaimer").style.display = "none";
+    document.querySelector("#thankYou").style.display = "block";
+    document.querySelector("#thankYou").style.animation = "thanksFade 6s forwards linear"
+    setTimeout(function(){
+      document.querySelector("#loadingScreen").style.display = "block"; 
+      setTimeout(function(){
+        window.location.href ="titleScreen.html"
+    },5000)
+    },10000)
+    }
+  }
+})</script>
+<style>
+@font-face {
+    font-family: 'CartoonClashFont'; /*a name to be used later*/
+    src: url('https://cdn.glitch.global/ba3580e5-fb53-496e-a69b-f0e808da807f/Kodchasan-Light.ttf?v=1732415210418'); /*URL to font*/
+}
+  @keyframes thanksFade{
+  0%
+  {
+    opacity:1;
+  }
+  50%
+  {
+    opacity:1;
+  }
+  100%
+  {
+    opacity: 0;
+  }
+}
+body{
+  font: 3rem "CartoonClashFont", sans-serif;
+  -webkit-user-select: none; /* Safari */        
+-moz-user-select: none; /* Firefox */
+-ms-user-select: none; /* IE10+/Edge */
+user-select: none; 
+  background:black;
+}</style>

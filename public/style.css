@@ -1,0 +1,124 @@
+html,body:not(.ui) {margin: 0; height: 100%; overflow: hidden; 
+  
+}
+
+.frame {
+    height: 100%; /* Can be anything */
+    width: 100%; /* Can be anything */
+    position: relative;
+    
+      
+background-size:cover;
+/*animation: zoomTransition 2s forwards cubic-bezier(0.0,0,0,1.00);*/
+    
+}
+
+.red-tint {
+      filter: sepia(1) saturate(10) hue-rotate(-50deg) brightness(0.9);
+      /*transition: transform 1s ease-out;*/
+      transform-origin: bottom center;
+    }
+
+
+.frame2 {
+    height: 100%; /* Can be anything */
+    width: 100%; /* Can be anything */
+    position: relative;
+    
+      
+/*animation: zoomTransition 2s forwards cubic-bezier(0.0,0,0,1.00);*/
+    
+}
+.centerAlign{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.verticalCenter{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.healthbar{
+  transition: width 0.25s ease-out;
+}
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#stageContainer{
+  width:888px; 
+  height:500px; 
+  position: relative;
+top: 50%;
+left: 50%;
+transform: translateX(-50%) translateY(-50%) translateY(100px);
+ /* background-color:gray */
+
+}
+#songCredits{
+  
+}
+@keyframes songLabel{
+  0%
+  {
+    left: 100%;
+  }
+  20%
+  {
+    left: calc(100% - 484px);
+  }
+  
+  80%
+  {
+    left: calc(100% - 484px);
+  }
+  100%
+  {
+    left: 100%;
+  }
+}
+@keyframes songLabel1{
+  0%
+  {
+    left: 100%;
+  }
+  20%
+  {
+    left: calc(100% - 484px);
+  }
+  
+  80%
+  {
+    left: calc(100% - 484px);
+  }
+  100%
+  {
+    left: 100%;
+  }
+}
+@keyframes zoomTransition {
+  from {
+    scale:100%;
+    transform: translateY(00px);
+  }
+
+  to {
+    scale:216%;
+    transform: translateY(-125px);
+  }
+}
+
+@keyframes healthChange {
+  from {
+    opacity:100%;
+  }
+  to {
+    opacity:0%;
+  }
+}
