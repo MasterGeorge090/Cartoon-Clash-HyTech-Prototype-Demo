@@ -1,0 +1,145 @@
+html,body {margin: 0; height: 100%; overflow: hidden; 
+  
+}
+.daButton{
+  border-radius: 25px;
+  background: linear-gradient(#ffbc44, #5f0000);
+  outline:solid;
+  /*text-align:center;*/
+  color:white;
+  display: inline-block;
+  padding: 0 10px;
+  border:solid 5px #ffbc44;
+  box-shadow:
+    inset 0 0 0 4px #ffbc44,
+
+}
+@keyframes songLabel{
+  0%
+  {
+    left: 100%;
+  }
+  20%
+  {
+    left: calc(100% - 484px);
+  }
+  
+  80%
+  {
+    left: calc(100% - 484px);
+  }
+  100%
+  {
+    left: 100%;
+  }
+}
+#enterUsername{
+  background:transparent;
+  color:white;
+  border: solid 5px white;
+  outline:none;
+  border-radius: 25px;
+  font: 3rem "CartoonClashFont", sans-serif;
+  text-align:center;
+}
+#codeInput{
+  background:transparent;
+  color:white;
+  border: solid 5px white;
+  outline:none;
+  border-radius: 25px;
+  font: 3rem "CartoonClashFont", sans-serif;
+  text-align:center;
+}
+
+#reasonInput{
+  background:transparent;
+  color:white;
+  border: solid 5px white;
+  outline:none;
+  border-radius: 25px;
+  font: 3rem "CartoonClashFont", sans-serif;
+  text-align:center;
+}
+
+#chatInput{
+  background:#11044a;
+  color:white;
+  border: solid 5px white;
+  outline:none;
+  border-radius: 25px;
+  font: 1rem "CartoonClashFont", sans-serif;
+  
+}
+
+.outlineBlue{
+  outline:solid 5px #11044a;
+}
+.outlineDarkOrange{
+  border:solid 5px #5f0000;
+}
+.outlineOrange{
+  outline:solid 5px #ffbc44;
+}
+.outlineOrangeButton{
+  outline:solid 5px #ffbc44;
+}
+.outlineWhite{
+  outline:solid 5px white;
+}
+
+.uiContainer {
+ /* background-color: #11044a;*/
+  border-radius: 25px;
+  border:solid 5px #ffbc44;
+  box-shadow:
+    inset 0 0 0 8px #5f0000;
+
+
+}
+
+.disabled {
+  opacity: 50%;
+  pointer-events:none;
+}
+
+.centerAlign{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.verticalCenter{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.daButton:hover{
+  border-radius: 25px;
+  background: linear-gradient(#3d0000, #80600f);
+  border:solid 5px #80600f;
+  cursor: pointer;
+}
+.daButton:active{
+  border-radius: 25px;
+  background: linear-gradient(#2c2202, #1c1102);
+  border:solid 5px #2c2202;
+  cursor: pointer;
+}
+
+
+@font-face {
+    font-family: 'CartoonClashFont'; /*a name to be used later*/
+    src: url('https://cdn.glitch.global/ba3580e5-fb53-496e-a69b-f0e808da807f/Kodchasan-Light.ttf?v=1732415210418'); /*URL to font*/
+}
+body{
+  font: 3rem "CartoonClashFont", sans-serif;
+  -webkit-user-select: none; /* Safari */        
+-moz-user-select: none; /* Firefox */
+-ms-user-select: none; /* IE10+/Edge */
+user-select: none; 
+  background:#11044a;
+}
